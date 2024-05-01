@@ -16,7 +16,7 @@ import java.util.List;
 public class InventoryController {
 
 
-private final   InventoryService inventoryService;
+    private final InventoryService inventoryService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)

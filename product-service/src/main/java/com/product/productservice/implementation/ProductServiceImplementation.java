@@ -6,7 +6,6 @@ import com.product.productservice.model.Product;
 import com.product.productservice.repository.ProductRepository;
 import com.product.productservice.services.ProductService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +15,12 @@ import java.util.List;
 public class ProductServiceImplementation implements ProductService {
 
 
-    @Autowired
     private ProductRepository productRepository;
+
+    public ProductServiceImplementation(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
     @Override
     public Product createProduct(ProductRequest productRequest) {
         Product product = new Product();
